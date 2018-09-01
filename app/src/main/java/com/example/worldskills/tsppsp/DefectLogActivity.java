@@ -87,30 +87,30 @@ public class DefectLogActivity extends AppCompatActivity {
                 break;
         }
     }
-
+    int minutos;
     private void validarDatos(View view) {
         String[] recorte=chronometer.getText().toString().split(":");
-        int minutos=Integer.parseInt(recorte[0]);
+        minutos=Integer.parseInt(recorte[0]);
         if (txtDate.getText().toString().length()>0){
-            if (minutos==0){
                 guardarInformacion(view);
-            }else{
-                Snackbar.make(view,"Los datos son incorrectos",Snackbar.LENGTH_SHORT).show();
-            }
         }else{
             Snackbar.make(view,"Los datos son incorrectos",Snackbar.LENGTH_SHORT).show();
         }
     }
 
     private void guardarInformacion(View view) {
-        chronometer.stop();
-        String sql="insert into defectlog(date,type,phaseinjected,phaseremoved,fixtime,defectdescription,idproject) vales" +
-                "('"+txtDate.getText()+"','"+spinnerType.getSelectedItem().toString()+"','"+spinnerInjected.getSelectedItem().toString()+"'," +
-                "'"+spinnerRemoved.getSelectedItem().toString()+"','"+chronometer.getText().toString()+"','"+txtDescription.getText()+"','"+ Variables.id+"')";
-        Conexion conexion=new Conexion(this);
-        SQLiteDatabase db=conexion.getWritableDatabase();
-        db.execSQL(sql);
-        Snackbar.make(view,"Datos guardados",Snackbar.LENGTH_SHORT).show();
+        try{
+            chronometer.stop();
+            String sql="insert into defectlog(date,type,phaseinjected,phaseremoved,fixtime,defectdescription,idproject) values" +
+                    "('"+txtDate.getText()+"','"+spinnerType.getSelectedItem().toString()+"','"+spinnerInjected.getSelectedItem().toString()+"'," +
+                    "'"+spinnerRemoved.getSelectedItem().toString()+"','"+minutos+"','"+txtDescription.getText()+"','"+ Variables.id+"')";
+            Conexion conexion=new Conexion(this);
+            SQLiteDatabase db=conexion.getWritableDatabase();
+            db.execSQL(sql);
+            Snackbar.make(view,"Datos guardados",Snackbar.LENGTH_SHORT).show();
+        }catch (Exception e){
+            Snackbar.make(view,"Los datos son incorrectos",Snackbar.LENGTH_SHORT).show();
+        }
     }
 
     private void resetear() {
