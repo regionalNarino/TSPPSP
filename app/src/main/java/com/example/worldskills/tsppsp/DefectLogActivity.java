@@ -1,6 +1,8 @@
 package com.example.worldskills.tsppsp;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.SystemClock;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -9,6 +11,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.example.worldskills.tsppsp.Other.Conexion;
+import com.example.worldskills.tsppsp.Other.Variables;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -75,12 +81,41 @@ public class DefectLogActivity extends AppCompatActivity {
             case R.id.btnResetChronometer:
                 resetear();
                 break;
+
+            case R.id.btnRegistrarDefect:
+                validarDatos(view);
+                break;
         }
     }
 
+    private void validarDatos(View view) {
+        String[] recorte=chronometer.getText().toString().split(":");
+        int minutos=Integer.parseInt(recorte[0]);
+        if (txtDate.getText().toString().length()>0){
+            if (minutos==0){
+                guardarInformacion(view);
+            }else{
+                Snackbar.make(view,"Los datos son incorrectos",Snackbar.LENGTH_SHORT).show();
+            }
+        }else{
+            Snackbar.make(view,"Los datos son incorrectos",Snackbar.LENGTH_SHORT).show();
+        }
+    }
+
+    private void guardarInformacion(View view) {
+        chronometer.stop();
+        String sql="insert into defectlog(date,type,phaseinjected,phaseremoved,fixtime,defectdescription,idproject) vales" +
+                "('"+txtDate.getText()+"','"+spinnerType.getSelectedItem().toString()+"','"+spinnerInjected.getSelectedItem().toString()+"'," +
+                "'"+spinnerRemoved.getSelectedItem().toString()+"','"+chronometer.getText().toString()+"','"+txtDescription.getText()+"','"+ Variables.id+"')";
+        Conexion conexion=new Conexion(this);
+        SQLiteDatabase db=conexion.getWritableDatabase();
+        db.execSQL(sql);
+        Snackbar.make(view,"Datos guardados",Snackbar.LENGTH_SHORT).show();
+    }
+
     private void resetear() {
-        chronometer.setBase(tiempoPause-SystemClock.elapsedRealtime());
-        chronometer.start();
+        tiempoPause=0;
+        chronometer.setBase(SystemClock.elapsedRealtime()-tiempoPause);
         pause=true;
     }
 
