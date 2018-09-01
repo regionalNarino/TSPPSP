@@ -107,10 +107,16 @@ public class DefectLogActivity extends AppCompatActivity {
             Conexion conexion=new Conexion(this);
             SQLiteDatabase db=conexion.getWritableDatabase();
             db.execSQL(sql);
+            limpiarDatos();
             Snackbar.make(view,"Datos guardados",Snackbar.LENGTH_SHORT).show();
         }catch (Exception e){
             Snackbar.make(view,"Los datos son incorrectos",Snackbar.LENGTH_SHORT).show();
         }
+    }
+
+    private void limpiarDatos() {
+        txtDate.setText("");
+        chronometer.setBase(SystemClock.elapsedRealtime()-0);
     }
 
     private void resetear() {
