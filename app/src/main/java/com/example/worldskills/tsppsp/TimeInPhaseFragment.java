@@ -21,6 +21,7 @@ public class TimeInPhaseFragment extends Fragment {
         TextView texto=view.findViewById(R.id.saludo);
         texto.setText("hola amiogo");
 
+
         return view;
     }
 
