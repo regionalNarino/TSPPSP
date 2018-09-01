@@ -107,7 +107,7 @@ public class TimeLogActivity extends AppCompatActivity {
             Conexion conexion=new Conexion(this);
             SQLiteDatabase db=conexion.getWritableDatabase();
             db.execSQL(sql);
-            Snackbar.make(view,"Corrija los datos porfavor",Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(view,"Datos guardados correctamente",Snackbar.LENGTH_SHORT).show();
             limiparFormulario();
         }catch (Exception e){
             Snackbar.make(view,"Corrija los datos porfavor",Snackbar.LENGTH_SHORT).show();

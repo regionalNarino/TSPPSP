@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 
 public class TimeInPhaseFragment extends Fragment {
@@ -14,7 +17,11 @@ public class TimeInPhaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_time_in_phase, container, false);
+        View view= inflater.inflate(R.layout.fragment_time_in_phase, container, false);
+        TextView texto=view.findViewById(R.id.saludo);
+        texto.setText("hola amiogo");
+
+        return view;
     }
 
     public interface OnFragmentInteractionListener {
