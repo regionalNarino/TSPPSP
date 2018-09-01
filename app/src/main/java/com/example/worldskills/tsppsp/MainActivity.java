@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         if (nameProject.getText().length()>0){
             Conexion conexion=new Conexion(this);
             SQLiteDatabase db=conexion.getWritableDatabase();
-            db.execSQL("insert into proyecto(nombre) values('"+nameProject.getText()+"')");
+            db.execSQL("insert into proyecto(nombre,tiempo) values('"+nameProject.getText()+"','false')");
             nameProject.setText("");
             cargarList();
         }

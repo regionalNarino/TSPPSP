@@ -5,11 +5,31 @@
     android:layout_height="match_parent"
     tools:context=".TimeInPhaseFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:id="@+id/saludo"
-        android:layout_height="match_parent"
-        android:text="time in phase" />
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/txtTiempoFragment"
+                android:layout_width="439dp"
+                android:layout_height="wrap_content"
+                android:hint="Escriba el tiempo que planea demorarse" />
+
+            <Button
+                android:id="@+id/btnGuardarTiempo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guardar" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
 
 </FrameLayout>

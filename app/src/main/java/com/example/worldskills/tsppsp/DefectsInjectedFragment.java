@@ -47,37 +47,41 @@ public class DefectsInjectedFragment extends Fragment {
 
     private void cargarResultados() {
 
-        for (int i=0; i< fases.length; i++){
-            try{
-                String sql="select count(id) from defectlog where phaseinjected='"+fases[i]+"' and idproject="+ Variables.id;
-                Conexion conexion=new Conexion(getActivity());
-                SQLiteDatabase db=conexion.getReadableDatabase();
-                Cursor cursor=db.rawQuery(sql,null);
-                if (cursor!=null){
-                    cursor.moveToNext();
-                    if (i==0){ totalPlan= Integer.parseInt(cursor.getString(0)); }
-                    Toast.makeText(getActivity(), Integer.toString(totalPlan), Toast.LENGTH_SHORT).show();
-                    if (i==1){ totalDld= Integer.parseInt(cursor.getString(0)); }
-                    if (i==2){ totalCode= Integer.parseInt(cursor.getString(0)); }
-                    if (i==3){ totalCompile= Integer.parseInt(cursor.getString(0)); }
-                    if (i==4){ totalUt= Integer.parseInt(cursor.getString(0)); }
-                    if (i==5){ totalPm= Integer.parseInt(cursor.getString(0)); }
+        try{
+            for (int i=0; i< fases.length; i++){
+                try{
+                    String sql="select count(id) from defectlog where phaseinjected='"+fases[i]+"' and idproject="+ Variables.id;
+                    Conexion conexion=new Conexion(getActivity());
+                    SQLiteDatabase db=conexion.getReadableDatabase();
+                    Cursor cursor=db.rawQuery(sql,null);
+                    if (cursor!=null){
+                        cursor.moveToNext();
+                        if (i==0){ totalPlan= Integer.parseInt(cursor.getString(0)); }
+                        Toast.makeText(getActivity(), Integer.toString(totalPlan), Toast.LENGTH_SHORT).show();
+                        if (i==1){ totalDld= Integer.parseInt(cursor.getString(0)); }
+                        if (i==2){ totalCode= Integer.parseInt(cursor.getString(0)); }
+                        if (i==3){ totalCompile= Integer.parseInt(cursor.getString(0)); }
+                        if (i==4){ totalUt= Integer.parseInt(cursor.getString(0)); }
+                        if (i==5){ totalPm= Integer.parseInt(cursor.getString(0)); }
+
+                    }
+                }catch (Exception e){
 
                 }
-            }catch (Exception e){
+            }
+
+
+            String sql="select count(id) from defectlog where idproject="+ Variables.id+"";
+            Conexion conexion=new Conexion(getActivity());
+            SQLiteDatabase db=conexion.getReadableDatabase();
+            Cursor cursor=db.rawQuery(sql,null);
+            if (cursor!=null) {
+                cursor.moveToNext();
+                totalErrores=Integer.parseInt(cursor.getString(0));
+                sacarPorcentajes();
 
             }
-        }
-
-
-        String sql="select count(id) from defectlog where idproject="+ Variables.id+"";
-        Conexion conexion=new Conexion(getActivity());
-        SQLiteDatabase db=conexion.getReadableDatabase();
-        Cursor cursor=db.rawQuery(sql,null);
-        if (cursor!=null) {
-            cursor.moveToNext();
-            totalErrores=Integer.parseInt(cursor.getString(0));
-            sacarPorcentajes();
+        }catch (Exception e){
 
         }
     }
