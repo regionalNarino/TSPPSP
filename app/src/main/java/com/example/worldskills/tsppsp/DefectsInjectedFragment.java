@@ -27,6 +27,7 @@ public class DefectsInjectedFragment extends Fragment {
     int totalCompile=0;
     int totalUt=0;
     int totalPm=0;
+    int totalErrores=0;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -54,12 +55,48 @@ public class DefectsInjectedFragment extends Fragment {
                 Cursor cursor=db.rawQuery(sql,null);
                 if (cursor!=null){
                     cursor.moveToNext();
-                    plan.setText(cursor.getString(0));
+                    if (i==0){ totalPlan= Integer.parseInt(cursor.getString(0)); }
+                    Toast.makeText(getActivity(), Integer.toString(totalPlan), Toast.LENGTH_SHORT).show();
+                    if (i==1){ totalDld= Integer.parseInt(cursor.getString(0)); }
+                    if (i==2){ totalCode= Integer.parseInt(cursor.getString(0)); }
+                    if (i==3){ totalCompile= Integer.parseInt(cursor.getString(0)); }
+                    if (i==4){ totalUt= Integer.parseInt(cursor.getString(0)); }
+                    if (i==5){ totalPm= Integer.parseInt(cursor.getString(0)); }
+
                 }
             }catch (Exception e){
                 Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
+
+
+        String sql="select count(id) from defectlog where idproject="+ Variables.id+"";
+        Conexion conexion=new Conexion(getActivity());
+        SQLiteDatabase db=conexion.getReadableDatabase();
+        Cursor cursor=db.rawQuery(sql,null);
+        if (cursor!=null) {
+            cursor.moveToNext();
+            totalErrores=Integer.parseInt(cursor.getString(0));
+            sacarPorcentajes();
+            Toast.makeText(getActivity(), Integer.toString(totalErrores), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void sacarPorcentajes() {
+        double porcentajePlan=(totalPlan*100)/totalErrores;
+        double porcentajeDld=(totalDld*100)/totalErrores;
+        double porcentajeCode=(totalCode*100)/totalErrores;
+        double porcentajeCompile=(totalCompile*100)/totalErrores;
+        double porcentajeUt=(totalUt*100)/totalErrores;
+        double porcentajePm=(totalPm*100)/totalErrores;
+
+        plan.setText(Double.toString(porcentajePlan)+" %");
+        dld.setText(Double.toString(porcentajeDld)+" %");
+        code.setText(Double.toString(porcentajeCode)+" %");
+        compile.setText(Double.toString(porcentajeCompile)+" %");
+        ut.setText(Double.toString(porcentajeUt)+" %");
+        pm.setText(Double.toString(porcentajePm)+" %");
+
     }
 
     public interface OnFragmentInteractionListener {
