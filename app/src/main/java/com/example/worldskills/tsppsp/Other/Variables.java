@@ -1,5 +1,5 @@
 package com.example.worldskills.tsppsp.Other;
 
 public class Variables {
-    public static String id="";
+    public static String id="1";
 }

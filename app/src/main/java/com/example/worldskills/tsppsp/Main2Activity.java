@@ -43,6 +43,12 @@ public class Main2Activity extends AppCompatActivity implements DefectsInjectedF
     private ViewPager mViewPager;
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);

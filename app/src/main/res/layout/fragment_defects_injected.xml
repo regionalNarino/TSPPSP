@@ -6,9 +6,114 @@
     tools:context=".DefectsInjectedFragment">
 
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="defects injected" />
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:text="PLAN" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/planNumber"
+                android:layout_height="wrap_content"
+                android:text="0"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:text="DLD" />
+
+            <TextView
+                android:id="@+id/dldNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:text="CODE" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/codeNumber"
+                android:text="0"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:text="COMPILE" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/compileNumber"
+                android:layout_height="wrap_content"
+                android:text="0"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:text="UT" />
+
+            <TextView
+                android:id="@+id/utNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:text="PM" />
+
+            <TextView
+                android:id="@+id/pmNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </FrameLayout>
