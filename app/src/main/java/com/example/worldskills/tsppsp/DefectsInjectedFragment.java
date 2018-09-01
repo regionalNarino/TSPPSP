@@ -57,7 +57,7 @@ public class DefectsInjectedFragment extends Fragment {
                     if (cursor!=null){
                         cursor.moveToNext();
                         if (i==0){ totalPlan= Integer.parseInt(cursor.getString(0)); }
-                        Toast.makeText(getActivity(), Integer.toString(totalPlan), Toast.LENGTH_SHORT).show();
+
                         if (i==1){ totalDld= Integer.parseInt(cursor.getString(0)); }
                         if (i==2){ totalCode= Integer.parseInt(cursor.getString(0)); }
                         if (i==3){ totalCompile= Integer.parseInt(cursor.getString(0)); }
