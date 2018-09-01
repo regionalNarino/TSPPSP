@@ -165,7 +165,6 @@ public class Main2Activity extends AppCompatActivity implements DefectsInjectedF
                     DefectsRemovedFragment removedFragment=new DefectsRemovedFragment();
                     return removedFragment;
 
-
             }
 
             return PlaceholderFragment.newInstance(position + 1);

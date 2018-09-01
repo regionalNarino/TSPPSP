@@ -13,12 +13,23 @@ public class OpcionesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_opciones);
     }
 
+
     public void onClick(View view) {
 
         switch (view.getId()){
+            case R.id.button1:
+                Intent uno=new Intent(OpcionesActivity.this,TimeLogActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.button2:
+                Intent dos=new Intent(OpcionesActivity.this,DefectLogActivity.class);
+                startActivity(dos);
+                break;
             case R.id.button3:
                 Intent intent=new Intent(OpcionesActivity.this,Main2Activity.class);
                 startActivity(intent);
+                break;
+
         }
     }
 }
