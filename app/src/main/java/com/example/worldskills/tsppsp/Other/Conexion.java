@@ -14,6 +14,8 @@ public class Conexion extends SQLiteOpenHelper {
         db.execSQL("create table proyecto(id integer primary key autoincrement, nombre text, tiempo text)");
         db.execSQL("create table timelog(id integer primary key autoincrement, phase text, start text, interruption text, stop text, delta text, comments text, idproject text)");
         db.execSQL("create table defectlog(id integer primary key autoincrement, date text, type text, phaseinjected text, phaseremoved text, fixtime text, defectdescription text, idproject text)");
+
+        db.execSQL("insert into proyecto(nombre) values('android')");
     }
 
     @Override

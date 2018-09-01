@@ -3,6 +3,7 @@ package com.example.worldskills.tsppsp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
 public class OpcionesActivity extends AppCompatActivity {
@@ -11,6 +12,7 @@ public class OpcionesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opciones);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 
@@ -31,5 +33,15 @@ public class OpcionesActivity extends AppCompatActivity {
                 break;
 
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId()==android.R.id.home){
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
