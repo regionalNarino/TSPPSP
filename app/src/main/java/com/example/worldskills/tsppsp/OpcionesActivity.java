@@ -19,7 +19,7 @@ public class OpcionesActivity extends AppCompatActivity {
         switch (view.getId()){
             case R.id.button1:
                 Intent uno=new Intent(OpcionesActivity.this,TimeLogActivity.class);
-                startActivity(intent);
+                startActivity(uno);
                 break;
             case R.id.button2:
                 Intent dos=new Intent(OpcionesActivity.this,DefectLogActivity.class);
