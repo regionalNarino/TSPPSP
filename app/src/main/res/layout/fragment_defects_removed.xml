@@ -5,10 +5,126 @@
     android:layout_height="match_parent"
     tools:context=".DefectsRemovedFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="defects removed" />
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:text="PLAN"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/planRemoved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:text="DLD"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/dldRemoved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:text="CODE"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/codeRemoved"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="0"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:text="COMPILE"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/compileRemoved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:text="UT"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/utRemoved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:text="PM"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/pmRemoved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </FrameLayout>

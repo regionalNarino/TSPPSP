@@ -65,7 +65,7 @@ public class DefectsInjectedFragment extends Fragment {
 
                 }
             }catch (Exception e){
-                Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+
             }
         }
 
@@ -78,7 +78,7 @@ public class DefectsInjectedFragment extends Fragment {
             cursor.moveToNext();
             totalErrores=Integer.parseInt(cursor.getString(0));
             sacarPorcentajes();
-            Toast.makeText(getActivity(), Integer.toString(totalErrores), Toast.LENGTH_SHORT).show();
+
         }
     }
 

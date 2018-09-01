@@ -19,13 +19,15 @@
             <TextView
                 android:layout_width="239dp"
                 android:layout_height="wrap_content"
-                android:text="PLAN" />
+                android:text="PLAN"
+                android:textSize="24sp" />
 
             <TextView
-                android:layout_width="wrap_content"
                 android:id="@+id/planNumber"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"/>
+                android:text="0"
+                android:textSize="24sp" />
 
         </LinearLayout>
         <LinearLayout
@@ -36,13 +38,15 @@
             <TextView
                 android:layout_width="239dp"
                 android:layout_height="wrap_content"
-                android:text="DLD" />
+                android:text="DLD"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/dldNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"/>
+                android:text="0"
+                android:textSize="24sp" />
 
         </LinearLayout>
         <LinearLayout
@@ -53,30 +57,15 @@
             <TextView
                 android:layout_width="239dp"
                 android:layout_height="wrap_content"
-                android:text="CODE" />
+                android:text="CODE"
+                android:textSize="24sp" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/codeNumber"
-                android:text="0"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="239dp"
-                android:layout_height="wrap_content"
-                android:text="COMPILE" />
-
-            <TextView
                 android:layout_width="wrap_content"
-                android:id="@+id/compileNumber"
                 android:layout_height="wrap_content"
-                android:text="0"/>
+                android:text="0"
+                android:textSize="24sp" />
 
         </LinearLayout>
         <LinearLayout
@@ -87,13 +76,34 @@
             <TextView
                 android:layout_width="239dp"
                 android:layout_height="wrap_content"
-                android:text="UT" />
+                android:text="COMPILE"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/compileNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:text="UT"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/utNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"/>
+                android:text="0"
+                android:textSize="24sp" />
 
         </LinearLayout>
         <LinearLayout
@@ -104,13 +114,15 @@
             <TextView
                 android:layout_width="239dp"
                 android:layout_height="wrap_content"
-                android:text="PM" />
+                android:text="PM"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/pmNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"/>
+                android:text="0"
+                android:textSize="24sp" />
 
         </LinearLayout>
 
